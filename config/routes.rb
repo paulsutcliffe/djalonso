@@ -1,4 +1,7 @@
 Djalonso::Application.routes.draw do
+  resources :fotos
+
+
   get "djalonso/index"
 
   resources :diapositivas
