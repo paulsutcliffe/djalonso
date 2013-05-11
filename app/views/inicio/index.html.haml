@@ -1,2 +1,38 @@
-%h1 Inicio#index
-%p Find me in app/views/inicio/index.html.haml
+#preface-top
+  .container
+    #myCarousel.carousel.slide
+      %ol.carousel-indicators
+        %li{:"data-target" => "#myCarousel", :"data-slide-to" => "0", :class => "active"}
+        %li{:"data-target" => "#myCarousel", :"data-slide-to" => "1"}
+        %li{:"data-target" => "#myCarousel", :"data-slide-to" => "2"}
+
+      <!-- Carousel items -->
+      .carousel-inner
+        .item.active
+          = image_tag 'img-slide.jpg'
+        .item
+          = image_tag 'img-slide.jpg'
+        .item
+          = image_tag 'img-slide.jpg'
+
+      <!-- Carousel nav -->
+      = link_to raw('&lsaquo;'), '#myCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
+      = link_to raw('&rsaquo;'), '#myCarousel', :"data-slide" => 'next', :class => 'carousel-control right'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container
+  %h2.page-title
+    Dj Alonso Valencia

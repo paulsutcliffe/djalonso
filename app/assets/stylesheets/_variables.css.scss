@@ -1,0 +1,16 @@
+
+$bg-gray:                        url(bg-main.jpg) repeat 0 0;
+$val-y:                          -30px;
+$bg-header:                      url(bg-header-left.png) no-repeat -1px $val-y, url(bg-header-right.png) no-repeat 100% $val-y;
+$bg-header-pie:                  url(/assets/bg-header-left.png) no-repeat 0 $val-y, url(/assets/bg-header-right.png) no-repeat 100% $val-y;
+$bg-header-inner:                url(bg-header-middle.png) repeat-x 0 $val-y;
+$bevel-menu:                     url(bevel-menu.jpg) no-repeat 100% 0;
+$shadow-footer:                  url(shadow-footer.png) repeat-x 0 0;
+$shadow-slider:                  url(shadow-slider.png) no-repeat 50% 100%;
+
+// typography
+$font-open-sans:                 'Open Sans', sans-serif;
+
+// colors
+$dark:                           #4c5457;
+$cyan:                           #00a4d9;

@@ -1,0 +1,89 @@
+// http://www.w3resource.com/twitter-bootstrap/modals-tutorial.php
+
+.div 
+
+  // TOOLTIP (revisar porque no funciona)
+  = link_to 'hover over me', '#', :"data-toggle" => 'tooltip', :title => 'first tooltip', :id => 'element'
+
+  // ALERTAS
+  .alert
+    = link_to '*', '#', :"data-dismiss" => 'alert', :class => 'close'
+    %strong 
+      Warning
+    Best check yo self
+
+  .alert.alert-error
+    = link_to '*', '#', :"data-dismiss" => 'alert', :class => 'close'
+    %strong
+      Error!
+    This is a fatal error. 
+
+  .alert.alert-success
+    = link_to '*', '#', :"data-dismiss" => 'alert', :class => 'close'
+    %strong
+      Success!
+    You have successfully done it.
+
+  .alert.alert-info
+    = link_to '*', '#', :"data-dismiss" => 'alert', :class => 'close'
+    %strong 
+      Info
+    Watch this, but you may forget.
+
+  // MODAL
+  #example.modal.hide.fade.in{:style => "display: none"}
+  .modal-header
+    = link_to '*', '#', :'data-dismiss' => 'modal', :class => 'close'
+    %h3 This is a Modal Heading
+    .modal-body
+      %h4
+        Text in a modal
+      %p
+        You can add some text here.
+    .modal-footer
+      = link_to 'Call to action', :class => 'btn btn-success'
+      = link_to 'Close', :class => 'btn', :"data-dismiss" => 'modal'
+  = link_to 'Launch', '#example', :"data-toggle" => "modal", :class => "btn btn-primary btn-large"
+
+
+  // CAROUSEL
+  #myCarousel.carousel.slide
+  %ol.carousel-indicators
+    %li{:"data-target" => "#myCarousel", :"data-slide-to" => "0", :class => "active"}
+    %li{:"data-target" => "#myCarousel", :"data-slide-to" => "1"}
+    %li{:"data-target" => "#myCarousel", :"data-slide-to" => "2"}
+
+  <!-- Carousel items -->
+  .carousel-inner
+    .item.active
+      = image_tag 'img-slide.jpg'
+    .item
+      = image_tag 'img-slide.jpg'
+    .item
+      = image_tag 'img-slide.jpg'
+
+  <!-- Carousel nav -->
+  = link_to raw('&lsaquo;'), '#myCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
+  = link_to raw('&rsaquo;'), '#myCarousel', :"data-slide" => 'next', :class => 'carousel-control right'
+
+
+// en el js incluye todos los js
+//= require bootstrap 
+
+// incluye uno por uno     
+//= require bootstrap-transition
+//= require bootstrap-affix
+//= require bootstrap-alert
+//= require bootstrap-button
+//= require bootstrap-carousel
+//= require bootstrap-collapse
+//= require bootstrap-dropdown
+//= require bootstrap-modal
+//= require bootstrap-scrollspy
+//= require bootstrap-tab
+//= require bootstrap-tooltip
+//= require bootstrap-popover
+//= require bootstrap-typeahead
+
+
+

@@ -1,0 +1,55 @@
+
+
+body {background: $bg-gray; font-family: $font-open-sans; color: $dark; line-height: 100%; font-size: 13px; overflow-y: scroll}
+h1, h2, h3, h4, h5, h6, p, span, li, dd, a {color: $dark; text-transform: uppercase; line-height: 100%; font-weight: 300}
+h2.page-title {background: $cyan; color: white; @include inline-block; padding: 10px }
+ul, ol, dl, p {margin: 0}
+
+header .container {
+  position: relative; width: 960px;
+  background: $bg-header; -pie-background: $bg-header-pie; @include css3pie;
+  .header-inner {height: 120px; margin: 0 25px 0 24px; background: $bg-header-inner;
+    #logo {position: absolute; top: 15px; left: 20px}
+    #logo-dragon {position: absolute; top: 10px; right: 20px}
+  }
+}
+
+nav.main-menu {
+  position: relative; 
+  ul {position: absolute; bottom: 18px; left: 0; margin: 0px;
+    li {float: left; list-style: none; background: $bevel-menu; padding: 10px 2px 0 0; height: 25px;
+      a {text-transform: uppercase; @include text-shadow; @include inline-block; padding: 6px 24px;
+        &:hover, &.active {
+          text-decoration: none;
+          color: white; background: $cyan; text-shadow: none;
+        }
+      }
+      &.last {padding-right: 0; background: none}
+    }
+  }
+}
+
+section#content {
+  background: white;
+  #preface-top {
+    background: $bg-gray;
+  }
+}
+
+footer {
+  background: $shadow-footer;
+  .container {
+    height: 245px;
+  }
+}
+
+.front #preface-top .container {
+  height: 380px;
+  background: $shadow-slider;
+}
+
+.carousel {
+  .carousel-indicators {top: auto; bottom: 0; right: 0; width: 100%; text-align: center}
+  a.carousel-control {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
+}
+

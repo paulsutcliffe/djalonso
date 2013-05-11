@@ -11,6 +11,64 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130511004245) do
+
+  create_table "albumes", :force => true do |t|
+    t.string   "nombre"
+    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "albumes", ["slug"], :name => "index_albumes_on_slug", :unique => true
+
+  create_table "contactos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "telefono"
+    t.string   "email"
+    t.text     "mensaje"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "diapositivas", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "eventos", :force => true do |t|
+    t.string   "titulo"
+    t.date     "fecha"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "fotos", :force => true do |t|
+    t.integer  "album_id"
+    t.integer  "evento_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "musicas", :force => true do |t|
+    t.string   "embed_code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "servicios", :force => true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.text     "equipos"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "testimonios", :force => true do |t|
+    t.text     "contenido"
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
