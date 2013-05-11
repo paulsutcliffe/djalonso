@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  def current_year
+    time = Time.new
+    time.year.to_s
+  end
+
   def bodyid 
     @bodyid = params[:controller].parameterize
   end
@@ -27,6 +32,7 @@ class ApplicationController < ActionController::Base
     @diapositivas = Diapositiva.all
   end
 
+  helper_method :current_year
   helper_method :bodyid
   helper_method :bodyclass
   helper_method :diapositivas

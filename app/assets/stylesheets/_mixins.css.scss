@@ -1,3 +1,11 @@
+@mixin border {
+  border: 8px solid $cyan;
+}
+
+@mixin text-heavy {
+  font-size: $font-medium; font-weight: 600; text-transform: uppercase;
+}
+
 // core 
 @mixin text-shadow {
   text-shadow: 1px 1px 0px #d6dddf;

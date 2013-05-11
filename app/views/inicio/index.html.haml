@@ -1,3 +1,4 @@
+- page_title! 'Dj Alonso Valencia | Alquiler de equipos'
 #preface-top
   .container
     #myCarousel.carousel.slide
@@ -19,20 +20,77 @@
       = link_to raw('&lsaquo;'), '#myCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
       = link_to raw('&rsaquo;'), '#myCarousel', :"data-slide" => 'next', :class => 'carousel-control right'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .container
   %h2.page-title
     Dj Alonso Valencia
+
+  .row.dj-presentation
+    .span6.bordered
+      = image_tag 'img-alonso.jpg'
+      %p
+        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+    .span6
+
+  %h2.title
+    Alquiler de equipos
+  .row
+    .span12
+      %p
+        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+      %p
+        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+  .row
+    #alquilerCarousel.carousel.slide
+      %ol.carousel-indicators
+        %li{:"data-target" => "#alquilerCarousel", :"data-slide-to" => "0", :class => "active"}
+        %li{:"data-target" => "#alquilerCarousel", :"data-slide-to" => "1"}
+        %li{:"data-target" => "#alquilerCarousel", :"data-slide-to" => "2"}
+
+      <!-- Carousel items -->
+      .carousel-inner
+        .item.active
+          %ul.thumbnails
+            %li.span3
+              = image_tag 'img-alquiler-carousel-1.jpg'
+              %h3
+                Eventos corporativos
+            %li.span3.activado
+              = image_tag 'img-alquiler-carousel-1.jpg'
+              %h3
+                Staff de Dj's para tus eventos
+            %li.span3
+              = image_tag 'img-alquiler-carousel-1.jpg'
+              %h3
+                Sonido y luces para matrimonios
+        .item
+          %ul.thumbnails
+            %li.span3
+              = image_tag 'img-alquiler-carousel-1.jpg'
+            %li.span3.activado
+              = image_tag 'img-alquiler-carousel-1.jpg'
+            %li.span3
+              = image_tag 'img-alquiler-carousel-1.jpg'
+        .item
+          %ul.thumbnails
+            %li.span3
+              = image_tag 'img-alquiler-carousel-1.jpg'
+            %li.span3.activado
+              = image_tag 'img-alquiler-carousel-1.jpg'
+            %li.span3
+              = image_tag 'img-alquiler-carousel-1.jpg'
+
+      <!-- Carousel nav -->
+      = link_to '<', '#alquilerCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
+      = link_to '>', '#alquilerCarousel', :"data-slide" => 'next', :class => 'carousel-control right'
+
+
+
+  %h2.title
+    Testimonios
+  .row.testimonios
+    .span12
+      %p
+        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+    .span12.autor
+      %h3
+        Ricardo Castañeda

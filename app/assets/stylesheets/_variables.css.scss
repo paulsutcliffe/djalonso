@@ -7,9 +7,16 @@ $bg-header-inner:                url(bg-header-middle.png) repeat-x 0 $val-y;
 $bevel-menu:                     url(bevel-menu.jpg) no-repeat 100% 0;
 $shadow-footer:                  url(shadow-footer.png) repeat-x 0 0;
 $shadow-slider:                  url(shadow-slider.png) no-repeat 50% 100%;
+$slider-controls:                url(slider-controls.png) no-repeat -27px 0 transparent;
+$social-icons:                   url(social-icons.png) no-repeat 0 -100px;
+
+// spaces
+$row-bottom:                     50px;
 
 // typography
 $font-open-sans:                 'Open Sans', sans-serif;
+
+$font-medium:                    20px;
 
 // colors
 $dark:                           #4c5457;

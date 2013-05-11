@@ -1,9 +1,11 @@
 
 
 body {background: $bg-gray; font-family: $font-open-sans; color: $dark; line-height: 100%; font-size: 13px; overflow-y: scroll}
-h1, h2, h3, h4, h5, h6, p, span, li, dd, a {color: $dark; text-transform: uppercase; line-height: 100%; font-weight: 300}
-h2.page-title {background: $cyan; color: white; @include inline-block; padding: 10px }
+h1, h2, h3, h4, h5, h6, p, span, li, dd, a {color: $dark; margin: 0; line-height: 100%; font-weight: 300}
+h2.page-title, h2.title {background: $cyan; color: white; @include inline-block; text-transform: uppercase; 
+padding: 10px; border-bottom: 20px solid white }
 ul, ol, dl, p {margin: 0}
+p {line-height: 145%; font-size: 15px; text-align: justify}
 
 header .container {
   position: relative; width: 960px;
@@ -33,23 +35,90 @@ section#content {
   background: white;
   #preface-top {
     background: $bg-gray;
+    .container {padding-top: 0}
+  }
+  .container {
+    padding-top: 35px;
+    .row {
+      padding-bottom: $row-bottom
+    }
   }
 }
 
 footer {
   background: $shadow-footer;
-  .container {
-    height: 245px;
+  .container { height: 245px; 
+    .footer-credits {padding-top: 30px;
+      a, p {color: white; line-height: 100%; display: block; margin: 0}
+      #autor {text-align: right}
+    }
   }
 }
 
-.front #preface-top .container {
-  height: 380px;
-  background: $shadow-slider;
+.front #preface-top { padding-bottom: 5px;
+  .container { height: 380px; background: $shadow-slider}
 }
 
-.carousel {
-  .carousel-indicators {top: auto; bottom: 0; right: 0; width: 100%; text-align: center}
-  a.carousel-control {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
+.carousel { margin: 0;
+  .carousel-indicators {top: 104%; right: 0; width: 100%; text-align: center;
+    li { @include size(20px, 20px); @include inline-block; background: $slider-controls; cursor: pointer;
+      &.active {
+        background-position: 0 0;
+      }
+    }
+  }
+  a.carousel-control {top: 48%; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
+}
+#alquilerCarousel {
+  .carousel-inner {width: 795px; margin: 0 auto;
+    .thumbnails {margin: 0; padding-top: 8px;
+      li {margin-left: 0px; padding-left: 20px; width: 236px;
+        &.activado, &:hover {img {max-width: 240px; top: -8px; left: -10px; border-color: $gray}}
+        img {@include border; max-width: 220px; position: relative; top: 0; left: 0;
+        -moz-transition: 0.3s ease-out all}
+        h3 {text-align: center; @include text-heavy}
+      }
+    }
+  }
+  .carousel-control {background: none; color: $gray; font-weight:600; top: 40%}
 }
 
+
+.bordered {
+  img {@include border}
+}
+
+.dj-presentation {
+  img {max-width: 442px}
+  p {padding-top: 20px}
+}
+.testimonios {
+  p {text-align: center; font-size: 28px; padding: 0 5%}
+  h3 {text-align: right; @include text-heavy;  padding-top: 20px; padding-right: 5%;
+    &:before {content: "- "}
+  }
+}
+
+// social links
+.social {
+  text-align: right;
+  li {
+    list-style: none; @include inline-block;
+    a {
+      background: $social-icons; @include inline-block; @include size(87px, 110px);
+    }
+  }
+  &.social-follow {padding-top: 80px;
+    li {
+      &.twitter a {background-position: -0px 15px }
+      &.facebook a {background-position: -88px 15px }
+      &.rss a {background-position: -176px 15px }
+      &.email a {background-position: -265px 15px }
+
+      &.twitter a:hover {background-position: -0px -115px }
+      &.facebook a:hover {background-position: -88px -115px }
+      &.rss a:hover {background-position: -176px -115px }
+      &.email a:hover {background-position: -265px -115px }
+    }
+  }
+}

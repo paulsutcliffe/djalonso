@@ -40,12 +40,6 @@
       %script{:src => 'http://html5shim.googlecode.com/svn/trunk/html5.js'}
     = csrf_meta_tag
 
-    :javascript
-      $(document).ready(function() {
-        $(".alert").alert();
-      });
-
-
   %body{id: bodyid, class: bodyclass}
     - if notice
       %p.notice= notice
@@ -60,3 +54,14 @@
       = yield
     %footer
       .container
+        .row
+          .span6
+          .span6
+            = render 'shared/social_follow'
+        .row.footer-credits
+          .span6#copyright
+            %p
+              © 
+              = current_year + ' Todos los derechos reservados, Alonso Valencia.'
+          .span6#autor
+            = link_to 'DISEÑO Y DESARROLLO WEB POR KOSMYKA', 'http://www.kosmyka.com', target: '_blank'
