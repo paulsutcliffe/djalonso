@@ -214,7 +214,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (~> 4.2.1)
   faker (~> 1.1.2)
-  friendly_id
+  friendly_id (~> 4.0.9)
   haml
   haml-rails
   inherited_resources

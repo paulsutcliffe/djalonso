@@ -1,4 +1,24 @@
 Djalonso::Application.routes.draw do
+  get "djalonso/index"
+
+  resources :diapositivas
+
+
+  resources :musicas
+
+
+  resources :eventos
+
+
+  resources :albumes
+
+
+  resources :servicios
+
+
+  resources :contactos
+
+
   root to: 'inicio#index'
 
   get "inicio/index"

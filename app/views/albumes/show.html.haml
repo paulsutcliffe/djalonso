@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @album.nombre
+
+= link_to 'Edit', edit_album_path(@album)
+\|
+= link_to 'Back', albumes_path

@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Embed code:
+  = @musica.embed_code
+
+= link_to 'Edit', edit_musica_path(@musica)
+\|
+= link_to 'Back', musicas_path

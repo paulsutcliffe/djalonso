@@ -56,7 +56,7 @@ gem "haml-rails"
 gem "will_paginate"
 gem "inherited_resources"
 gem "page_title_helper"
-gem "friendly_id"
+gem "friendly_id", "~> 4.0.9"
 gem "devise"
 gem 'carrierwave'
 gem 'mini_magick'
