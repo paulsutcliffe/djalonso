@@ -1,3 +1,7 @@
+@mixin transition1 {
+  -moz-transition: 0.3s ease-out all; -webkit-transition: 0.3s ease-out all; -o-transition: 0.3s ease-out all; transition: 0.3s ease-out all
+}
+
 @mixin border {
   border: 8px solid $cyan;
 }
@@ -6,7 +10,12 @@
   font-size: $font-medium; font-weight: 600; text-transform: uppercase;
 }
 
-// core 
+@mixin button {
+  background: $gray; color: white; font-size: 20px; font-weight: 300; padding: 5px 40px; text-transform: uppercase; border: 0; 
+  @include inline-block;
+}
+
+// core
 @mixin text-shadow {
   text-shadow: 1px 1px 0px #d6dddf;
 }

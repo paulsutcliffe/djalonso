@@ -1,11 +1,14 @@
 
 
 body {background: $bg-gray; font-family: $font-open-sans; color: $dark; line-height: 100%; font-size: 13px; overflow-y: scroll}
-h1, h2, h3, h4, h5, h6, p, span, li, dd, a {color: $dark; margin: 0; line-height: 100%; font-weight: 300}
+h1, h2, h3, h4, h5, h6, p, span, li, dd, a, input {color: $dark; margin: 0; 
+line-height: 100%; font-weight: 300; font-family: $font-open-sans}
 h2.page-title, h2.title {background: $cyan; color: white; @include inline-block; text-transform: uppercase; 
 padding: 10px; border-bottom: 20px solid white }
-ul, ol, dl, p {margin: 0}
-p {line-height: 145%; font-size: 15px; text-align: justify}
+ul, ol, dl, p {margin: 0} li {list-style: none}
+p {line-height: 145%; font-size: 15px; text-align: justify; padding-bottom: 20px}
+figure {margin: 0}
+section {padding-bottom: $row-bottom;}
 
 header .container {
   position: relative; width: 960px;
@@ -20,19 +23,18 @@ nav.main-menu {
   position: relative; 
   ul {position: absolute; bottom: 18px; left: 0; margin: 0px;
     li {float: left; list-style: none; background: $bevel-menu; padding: 10px 2px 0 0; height: 25px;
-      a {text-transform: uppercase; @include text-shadow; @include inline-block; padding: 6px 24px;
-        &:hover, &.active {
+      a, span {text-transform: uppercase; @include text-shadow; @include inline-block; padding: 6px 24px}
+      a:hover, span {
           text-decoration: none;
           color: white; background: $cyan; text-shadow: none;
         }
-      }
       &.last {padding-right: 0; background: none}
     }
   }
 }
 
 section#content {
-  background: white;
+  background: white; overflow: hidden;
   #preface-top {
     background: $bg-gray;
     .container {padding-top: 0}
@@ -41,6 +43,13 @@ section#content {
     padding-top: 35px;
     .row {
       padding-bottom: $row-bottom
+    }
+  }
+  .alert-container {
+    @extend .container;
+    padding-top: 8px; margin-top: 10px;
+    .alert-inner {
+      @include makeColumn(12)
     }
   }
 }
@@ -59,6 +68,9 @@ footer {
   .container { height: 380px; background: $shadow-slider}
 }
 
+.region {
+  @extend .row;
+}
 .carousel { margin: 0;
   .carousel-indicators {top: 104%; right: 0; width: 100%; text-align: center;
     li { @include size(20px, 20px); @include inline-block; background: $slider-controls; cursor: pointer;
@@ -75,12 +87,13 @@ footer {
       li {margin-left: 0px; padding-left: 20px; width: 236px;
         &.activado, &:hover {img {max-width: 240px; top: -8px; left: -10px; border-color: $gray}}
         img {@include border; max-width: 220px; position: relative; top: 0; left: 0;
-        -moz-transition: 0.3s ease-out all}
+          @include transition1;
+        }
         h3 {text-align: center; @include text-heavy}
       }
     }
   }
-  .carousel-control {background: none; color: $gray; font-weight:600; top: 40%}
+  .carousel-control {background: none; color: $gray; font-weight:600; top: 120px}
 }
 
 
@@ -122,3 +135,111 @@ footer {
     }
   }
 }
+
+.content {
+  @include makeRow();
+}
+
+// Admin
+.administrate {
+  padding-bottom: $row-bottom; 
+  &.create {}
+  &.iterate {padding: 5px 0; text-align: right}
+}
+
+// Inicio
+.dj-presentation {
+  .dj-presentation-foto {
+    @extend .borderer;
+    @include makeColumn(6);
+  }
+  .dj-presentation-likebox {
+    @include makeColumn(6);
+  }
+}
+.alquiler-equipos {
+  .alquiler-equipos-detalle {}
+}
+.testimonios {
+  .testimonios-detalle, .testimonios-autor {}
+}
+.soundcloud-gallery {
+  li {padding-bottom: $row-bottom}
+}
+
+.alquiler-equipos-detalle,
+.testimonios-detalle, .testimonios-autor,
+.soundcloud-gallery,
+.content-inner {@include makeColumn(12)}
+
+// forms
+form {background: $cyan; padding: $row-top 0 $row-bottom; 
+  &:after {@include clearfix2;
+  }
+  .fields {width: auto; float: left}
+  .field, .actions {margin: 0; padding-bottom: 15px}
+  .datos {padding-left: 100px}
+  .mensaje {padding-right: 135px}
+  .field {
+    label {@include inline-block; width: 90px; text-align: right; padding-right: 10px; text-transform: uppercase; font-size: 16px; color: white; font-weight: 300; padding-top: 10px}
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {width: 230px; padding: 10px; background: white; border: 0; color: black; height: auto; margin: 0;
+      border-radius: 3px; @include css3pie;
+    }
+    textarea {height: 150px; min-height: 150px; resize: vertical}
+  }
+  .actions {padding-right: 40px;
+    input {@include button; float: right }
+  }
+}
+
+#contactos .actions {padding-right: 0}
+
+.contact-info {padding: $row-top 0 0 40px;
+  h3 {@include text-heavy; padding-bottom: 10px}
+  span {@include button; margin-top: 10px; padding: 10px}
+}
+
+// about dj
+#djalonso {
+  figure {
+    @include makeColumn(12); width: 105%; padding-bottom: $row-bottom; padding-top: $row-top;
+    img {@include border; float: left; margin-right: 25px; width: 280px}
+  }
+  aside {
+    @include makeColumn(12);
+    img {float: left; margin-right: 20px}
+    p {overflow: hidden}
+  }
+}
+
+// álbumes
+#albumes {
+  .content {
+    ul {width: 105%;
+      li {float: left; margin: 0 30px 30px 0; position: relative; @include size(300px, 250px); z-index: 10;
+        h3 {position: absolute; top: -80px; left: 0; padding: 10px; visibility: hidden; 
+        opacity: 0; filter: alpha(opacity=0); z-index: 20; @include transition1;
+        background: rgba(255,255,255,0.5)}
+        &:hover {z-index: 20}
+        &:hover h3 {visibility: visible; opacity: 1; filter: alpha(opacity=100); top: 0}
+        &:hover img {width: 340px; max-width: 340px; height: auto; left: -20px; top: -20px; @include transition1; border-color: $gray}
+        img { @include border; position: absolute; top: 0; left: 0; @include size(300px, 250px); max-width: 300px}
+      }
+    }
+  }
+}
+
+
+// buttons inheritance
+.button {
+  &.back {
+    @extend .btn;
+    @extend .btn-info;
+  }
+}
+
+// devise
+body[id^="devise"] br {display: none}

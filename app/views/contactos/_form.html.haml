@@ -5,18 +5,28 @@
       %ul
         - @contacto.errors.full_messages.each do |msg|
           %li= msg
+    :javascript
+      var alerta = document.getElementById('alert');
+      //alerta.setAttribute('class', 'alert alert-error');
+      //alerta.setAttribute('className', 'alert alert-error');
 
-  .field
-    = f.label :nombre
-    = f.text_field :nombre
-  .field
-    = f.label :telefono
-    = f.text_field :telefono
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :mensaje
-    = f.text_area :mensaje
-  .actions
-    = f.submit 'Save'
+      alerta.className += ' alert-error';
+      alerta.className = alerta.className.replace(/\balert-success\b/, '');  
+  .fields.datos
+    .field
+      = f.label :nombre
+      = f.text_field :nombre
+    .field
+      = f.label :telefono
+      = f.text_field :telefono
+  .fields.mensaje
+    .field
+      = f.label :email
+      = f.text_field :email
+    .field
+      = f.label :mensaje
+      = f.text_area :mensaje
+    .actions
+      = f.submit 'Save'
+
+  

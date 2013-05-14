@@ -33,6 +33,10 @@
     = javascript_include_tag 'application.js'
     = yield :scripts
 
+
+ 
+
+
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
 
@@ -41,16 +45,16 @@
     = csrf_meta_tag
 
   %body{id: bodyid, class: bodyclass}
-    - if notice
-      %p.notice= notice
     %header{:role => 'banner'}
       .container
         .header-inner
-          = link_to image_tag('logo.png'), root_path, id: 'logo'
+          %h1
+            = link_to image_tag('logo.png', alt: 'Dj Alonso'), root_path, id: 'logo'
           = link_to image_tag('logo-dragon.png'), '/', id: 'logo-dragon'
     %nav.container.main-menu
       = render 'layouts/menu'    
     %section#content{:role => 'main'}
+      = render 'layouts/notices'
       = yield
     %footer
       .container

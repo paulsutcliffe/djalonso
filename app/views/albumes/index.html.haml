@@ -1,19 +1,33 @@
-%h1 Listing albumes
+.container
+  %h2.page-title= page_title! 'Galería'
 
-%table
-  %tr
-    %th Nombre
-    %th
-    %th
-    %th
+  - if current_admin 
+    .administrate.create
+      = link_to 'New Música', new_musica_path, class: 'btn btn-primary'
 
-  - @albumes.each do |album|
-    %tr
-      %td= album.nombre
-      %td= link_to 'Show', album
-      %td= link_to 'Edit', edit_album_path(album)
-      %td= link_to 'Destroy', album, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  .content
+    %ul.content-inner
+      %li
+        %h3 Test rwrwerw rwerwrwr wrtwrr wrwrwrwerw r
+        = image_tag 'img-gallery.jpg'
+      %li
+        %h3 Test
+        = image_tag 'img-gallery.jpg'
+      %li
+        %h3 Test
+        = image_tag 'img-gallery.jpg'
+      %li
+        %h3 Test
+        = image_tag 'img-gallery.jpg'
+      - @albumes.each do |album|
+        %li
+          %h3= album.nombre
+          = link_to image_tag('img-gallery.jpg'), album
 
-%br
+          //- if current_admin
+          .administrate.iterate
+            = link_to 'Edit', edit_album_path(album), :class => 'btn btn-success'
+            = link_to 'delete', album, :method => :delete, :class => 'btn btn-warning', :confirm => 'Are you sure?'
 
-= link_to 'New Album', new_album_path
+      
+

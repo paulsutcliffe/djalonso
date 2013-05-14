@@ -1,5 +1,7 @@
-%h1 New diapositiva
+.container
+  %h2.page-title= page_title! 'Agregar Diapositiva'
 
-= render 'form'
-
-= link_to 'Back', diapositivas_path
+  .content
+    .content-inner
+      = render 'form'
+      = link_to 'Back', diapositivas_path, class: 'button back'

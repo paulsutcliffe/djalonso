@@ -1,5 +1,8 @@
-%h1 New musica
+.container
+  %h2.page-title= page_title! 'Agregar Soundcloud'
 
-= render 'form'
+  .content
+    .content-inner
+      = render 'form'
 
-= link_to 'Back', musicas_path
+      = link_to 'Back', musicas_path, class: 'button back'

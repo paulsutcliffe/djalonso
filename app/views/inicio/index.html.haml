@@ -23,23 +23,24 @@
 .container
   %h2.page-title
     Dj Alonso Valencia
+  .dj-presentation
+    .content
+      .dj-presentation-foto
+        = image_tag 'img-alonso.jpg'
+        %p
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+      .dj-presentation-likebox
 
-  .row.dj-presentation
-    .span6.bordered
-      = image_tag 'img-alonso.jpg'
-      %p
-        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-    .span6
-
-  %h2.title
-    Alquiler de equipos
-  .row
-    .span12
-      %p
-        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-      %p
-        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-  .row
+  %section.alquiler-equipos
+    %h2.title
+      Alquiler de equipos
+    .content
+      .alquiler-equipos-detalle
+        %p
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+        %p
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+    .row
     #alquilerCarousel.carousel.slide
       %ol.carousel-indicators
         %li{:"data-target" => "#alquilerCarousel", :"data-slide-to" => "0", :class => "active"}
@@ -84,13 +85,13 @@
       = link_to '>', '#alquilerCarousel', :"data-slide" => 'next', :class => 'carousel-control right'
 
 
-
-  %h2.title
-    Testimonios
-  .row.testimonios
-    .span12
-      %p
-        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-    .span12.autor
-      %h3
-        Ricardo Castañeda
+  %section.testimonios
+    %h2.title
+      Testimonios
+    .content
+      .testimonios-detalle
+        %p
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+      .testimonios-autor
+        %h3
+          Ricardo Castañeda

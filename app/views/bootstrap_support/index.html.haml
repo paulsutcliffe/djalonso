@@ -31,7 +31,7 @@
     Watch this, but you may forget.
 
   // MODAL
-  #example.modal.hide.fade.in{:style => "display: none"}
+#example.modal.hide.fade.in{:style => "display: none"}
   .modal-header
     = link_to '*', '#', :'data-dismiss' => 'modal', :class => 'close'
     %h3 This is a Modal Heading
@@ -41,8 +41,8 @@
       %p
         You can add some text here.
     .modal-footer
-      = link_to 'Call to action', :class => 'btn btn-success'
-      = link_to 'Close', :class => 'btn', :"data-dismiss" => 'modal'
+      = link_to 'Call to action', '#', :class => 'btn btn-success'
+      = link_to 'Close', '#', :"data-dismiss" => 'modal', :class => 'btn'
   = link_to 'Launch', '#example', :"data-toggle" => "modal", :class => "btn btn-primary btn-large"
 
 

@@ -1,5 +1,14 @@
-%h1 New contacto
+.container
+  %h2.page-title= page_title! 'Contacto'
 
-= render 'form'
-
-= link_to 'Back', contactos_path
+  .content
+    .content-inner
+      = render 'form'
+      .contact-info
+        %h3 Alonso Valencia
+        %p
+          %span 99123456
+          %br
+          %span 345-3453
+          %br
+          %span info@alonsovalencia.com

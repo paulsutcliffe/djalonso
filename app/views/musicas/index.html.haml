@@ -1,19 +1,21 @@
-%h1 Listing musicas
-
-%table
-  %tr
-    %th Embed code
-    %th
-    %th
-    %th
-
+.container
+  %h2.page-title= page_title! 'Música'
+ 
+  - if current_admin 
+    .administrate.create
+      = link_to 'New Música', new_musica_path, class: 'btn btn-primary'
+ 
   - @musicas.each do |musica|
-    %tr
-      %td= musica.embed_code
-      %td= link_to 'Show', musica
-      %td= link_to 'Edit', edit_musica_path(musica)
-      %td= link_to 'Destroy', musica, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .content
+      %ul.soundcloud-gallery
+        %li
+          = raw(musica.embed_code)
+          - if current_admin
+            .administrate.iterate
+              = link_to 'Edit', edit_musica_path(musica), :class => 'btn btn-success'
+              = link_to 'delete', musica, :method => :delete, :class => 'btn btn-warning', :confirm => 'Are you sure?'
 
-%br
 
-= link_to 'New Musica', new_musica_path
+
+
+

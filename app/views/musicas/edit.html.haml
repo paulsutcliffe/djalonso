@@ -1,7 +1,8 @@
-%h1 Editing musica
+.container
+  %h2.page-title= page_title! 'Editar Soundcloud'
 
-= render 'form'
+  .content
+    .content-inner
+      = render 'form'
 
-= link_to 'Show', @musica
-\|
-= link_to 'Back', musicas_path
+      = link_to 'Back', musicas_path, class: 'button back'

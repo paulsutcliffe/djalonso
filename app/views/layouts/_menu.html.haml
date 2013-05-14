@@ -1,16 +1,21 @@
 %ul
   %li.first
-    = link_to 'Inicio', '#', class: 'active'
+    = link_to_unless_current 'Inicio', root_path do
+      %span Inicio
   %li
-    = link_to 'DJ ALONSO', '#'
+    = link_to_unless_current 'DJ ALONSO', djalonso_index_path do
+      %span DJ Alonso
   %li
     = link_to 'ALQUILER DE EQUIPOS', '#'
   %li
-    = link_to 'GALERÍA', '#'
+    = link_to_unless_current 'GALERÍA', albumes_path do
+      %span Galería
   %li
     = link_to 'MATRIMONIOS Y EVENTOS', '#'
   %li
-    = link_to 'MÚSICA', '#'
+    = link_to_unless_current 'MÚSICA', musicas_path do
+      %span MÚSICA
   %li.last
-    = link_to 'CONTACTO', '#'
+    = link_to_unless_current 'CONTACTO', new_contacto_path do
+      %span Contacto
 
