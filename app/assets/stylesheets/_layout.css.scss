@@ -250,11 +250,19 @@ form {background: $cyan; padding: $row-top 0 $row-bottom;
 
 // buttons inheritance
 .button {
-  &.create {
+  &.button-create {
     @extend .btn;
     @extend .btn-info;
   }
-  &.back {
+  &.button-update {
+    @extend .btn;
+    @extend .btn-success; 
+  }
+  &.button-delete {
+    @extend .btn;
+    @extend .btn-warning;
+  }
+  &.button-back {
     @extend .btn;
     @extend .btn-info;
   }

@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20130512233855) do
     t.string   "nombre"
     t.text     "descripcion"
     t.text     "equipos"
+    t.text     "fotografia"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

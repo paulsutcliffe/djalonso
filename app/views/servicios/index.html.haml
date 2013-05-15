@@ -7,30 +7,22 @@
 
   .content
     %ul.content-inner.servicios-list
-      //- @servicios.each do |servicio|
-      %li
-        %h3 Equipos de sonido
-        
-        = image_tag 'img-servicio.jpg'
-        .servicio-descripcion
-          %p 
-            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.
-        %ul.equipos
-          %li 
-            Lorem ipsum dolor sit amet consectateur nonummy lorenzino.
-          %li
-            Lorem ipsum dolor
-          %li
-            Lorem ipsum dolor psum dolo
- 
-
       - @servicios.each do |servicio|
+        %li
+          %h3
+            = servicio.nombre
+          = image_tag servicio.fotografia_url.to_s
+          .servicio-descripcion
+            %p 
+              = servicio.descripcion
+          %ul.equipos
+            <li>
+            =  raw(servicio.equipos)
+            </li>
+          - if current_admin
+            .administrate.iterate
+              = link_to 'Edit', edit_servicio_path(servicio), :class => 'button button-edit'
+              = link_to 'delete', servicio, :method => :delete, :class => 'button button-delete', :confirm => 'Are you sure?'
         
-        = servicio.nombre
-        = servicio.descripcion
-        = servicio.equipos
-        = link_to 'Show', servicio
-        = link_to 'Edit', edit_servicio_path(servicio)
-        = link_to 'Destroy', servicio, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 
