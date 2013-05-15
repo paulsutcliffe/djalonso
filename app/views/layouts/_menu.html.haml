@@ -6,7 +6,8 @@
     = link_to_unless_current 'DJ ALONSO', djalonso_index_path do
       %span DJ Alonso
   %li
-    = link_to 'ALQUILER DE EQUIPOS', '#'
+    = link_to_unless_current 'ALQUILER DE EQUIPOS', servicios_path do
+      %span Alquiler de Equipos
   %li
     = link_to_unless_current 'GALERÍA', albumes_path do
       %span Galería

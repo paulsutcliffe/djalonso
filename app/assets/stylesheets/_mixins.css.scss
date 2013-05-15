@@ -6,6 +6,10 @@
   border: 8px solid $cyan;
 }
 
+@mixin image-left {
+  float: left; margin-right: 30px;
+}
+
 @mixin text-heavy {
   font-size: $font-medium; font-weight: 600; text-transform: uppercase;
 }

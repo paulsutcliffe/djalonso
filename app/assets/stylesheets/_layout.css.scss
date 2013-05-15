@@ -4,7 +4,7 @@ body {background: $bg-gray; font-family: $font-open-sans; color: $dark; line-hei
 h1, h2, h3, h4, h5, h6, p, span, li, dd, a, input {color: $dark; margin: 0; 
 line-height: 100%; font-weight: 300; font-family: $font-open-sans}
 h2.page-title, h2.title {background: $cyan; color: white; @include inline-block; text-transform: uppercase; 
-padding: 10px; border-bottom: 20px solid white }
+padding: 10px; border-bottom: $title-bottom solid white }
 ul, ol, dl, p {margin: 0} li {list-style: none}
 p {line-height: 145%; font-size: 15px; text-align: justify; padding-bottom: 20px}
 figure {margin: 0}
@@ -205,12 +205,13 @@ form {background: $cyan; padding: $row-top 0 $row-bottom;
 // about dj
 #djalonso {
   figure {
-    @include makeColumn(12); width: 105%; padding-bottom: $row-bottom; padding-top: $row-top;
+    &.pictures {width: 105%}
+    @include makeColumn(12); padding-bottom: $row-bottom; padding-top: $row-top;
     img {@include border; float: left; margin-right: 25px; width: 280px}
   }
   aside {
     @include makeColumn(12);
-    img {float: left; margin-right: 20px}
+    img {@include image-left}
     p {overflow: hidden}
   }
 }
@@ -232,9 +233,27 @@ form {background: $cyan; padding: $row-top 0 $row-bottom;
   }
 }
 
+// servicios
+#servicios {
+  .servicio-descripcion {
+    display: table-row;
+    p {display: table-cell; vertical-align: middle; height: 236px}
+  } 
+}
+.servicios-list {
+  h3 {@include text-heavy; padding-bottom: $sub-title-bottom}
+  img {@include border; @include image-left }
+  ul {float: left; clear: left; width: 100%;
+    li {@include button; float: left; clear: left; margin-top: $sub-title-bottom}
+  }
+}
 
 // buttons inheritance
 .button {
+  &.create {
+    @extend .btn;
+    @extend .btn-info;
+  }
   &.back {
     @extend .btn;
     @extend .btn-info;

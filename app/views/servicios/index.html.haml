@@ -1,23 +1,36 @@
-%h1 Listing servicios
+.container
+  %h2.page-title= page_title! 'ALQUILER DE EQUIPOS'
 
-%table
-  %tr
-    %th Nombre
-    %th Descripcion
-    %th Equipos
-    %th
-    %th
-    %th
+  - if current_admin 
+    .administrate.create
+      = link_to 'Agregar Servicio', new_servicio_path, class: 'button button-create'
 
-  - @servicios.each do |servicio|
-    %tr
-      %td= servicio.nombre
-      %td= servicio.descripcion
-      %td= servicio.equipos
-      %td= link_to 'Show', servicio
-      %td= link_to 'Edit', edit_servicio_path(servicio)
-      %td= link_to 'Destroy', servicio, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  .content
+    %ul.content-inner.servicios-list
+      //- @servicios.each do |servicio|
+      %li
+        %h3 Equipos de sonido
+        
+        = image_tag 'img-servicio.jpg'
+        .servicio-descripcion
+          %p 
+            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.
+        %ul.equipos
+          %li 
+            Lorem ipsum dolor sit amet consectateur nonummy lorenzino.
+          %li
+            Lorem ipsum dolor
+          %li
+            Lorem ipsum dolor psum dolo
+ 
 
-%br
+      - @servicios.each do |servicio|
+        
+        = servicio.nombre
+        = servicio.descripcion
+        = servicio.equipos
+        = link_to 'Show', servicio
+        = link_to 'Edit', edit_servicio_path(servicio)
+        = link_to 'Destroy', servicio, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Servicio', new_servicio_path
+

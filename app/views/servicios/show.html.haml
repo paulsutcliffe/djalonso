@@ -8,7 +8,7 @@
   = @servicio.descripcion
 %p
   %b Equipos:
-  = @servicio.equipos
+  = raw(@servicio.equipos)
 
 = link_to 'Edit', edit_servicio_path(@servicio)
 \|
