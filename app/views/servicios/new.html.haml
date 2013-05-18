@@ -5,14 +5,17 @@
   :javascript
     $(document).ready(function() {
       $('#servicio_equipos').tagsInput({
-        'delimiter':'</li><li>'
+        'delimiter':'</li><li>',  
+        width:'230px',
+        height:'100px'
       });
     });
 
 
+.container
+  %h2.page-title= page_title! 'Agregar Servicio'
 
-%h1 New servicio
-
-= render 'form'
-
-= link_to 'Back', servicios_path
+  .content
+    .content-inner
+      = render 'form'
+      = link_to 'Back', servicios_path, class: 'button button-back'

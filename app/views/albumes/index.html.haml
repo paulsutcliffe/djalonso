@@ -3,26 +3,16 @@
 
   - if current_admin 
     .administrate.create
-      = link_to 'New Música', new_musica_path, class: 'btn btn-primary'
+      = link_to 'Crear Álbum', new_album_path, class: 'btn btn-primary'
 
   .content
     %ul.content-inner
-      %li
-        %h3 Test rwrwerw rwerwrwr wrtwrr wrwrwrwerw r
-        = image_tag 'img-gallery.jpg'
-      %li
-        %h3 Test
-        = image_tag 'img-gallery.jpg'
-      %li
-        %h3 Test
-        = image_tag 'img-gallery.jpg'
-      %li
-        %h3 Test
-        = image_tag 'img-gallery.jpg'
       - @albumes.each do |album|
         %li
-          %h3= album.nombre
-          = link_to image_tag('img-gallery.jpg'), album
+          %h3
+            = album.nombre
+          - unless album.fotos.empty?
+            = link_to image_tag(album.fotos.first.imagen_url(:thumb).to_s), album
 
           //- if current_admin
           .administrate.iterate

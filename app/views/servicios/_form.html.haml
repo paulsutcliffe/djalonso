@@ -1,4 +1,4 @@
-= form_for @servicio, :html => {:multipart => true	} do |f|
+= form_for @servicio, html: {multipart: true} do |f|
   - if @servicio.errors.any?
     #error_explanation
       %h2= "#{pluralize(@servicio.errors.count, "error")} prohibited this servicio from being saved:"

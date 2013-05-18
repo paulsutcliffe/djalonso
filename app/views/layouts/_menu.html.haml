@@ -12,11 +12,14 @@
     = link_to_unless_current 'GALERÍA', albumes_path do
       %span Galería
   %li
-    = link_to 'MATRIMONIOS Y EVENTOS', '#'
+    = link_to_unless_current 'MATRIMONIOS Y EVENTOS', eventos_path do
+      %span Matrimonios y Eventos
   %li
     = link_to_unless_current 'MÚSICA', musicas_path do
       %span MÚSICA
   %li.last
     = link_to_unless_current 'CONTACTO', new_contacto_path do
       %span Contacto
+
+
 

@@ -85,7 +85,7 @@ footer {
   .carousel-inner {width: 795px; margin: 0 auto;
     .thumbnails {margin: 0; padding-top: 8px;
       li {margin-left: 0px; padding-left: 20px; width: 236px;
-        &.activado, &:hover {img {max-width: 240px; top: -8px; left: -10px; border-color: $gray}}
+        &:hover {img {max-width: 240px; top: -8px; left: -10px; border-color: $gray}}
         img {@include border; max-width: 220px; position: relative; top: 0; left: 0;
           @include transition1;
         }
@@ -185,10 +185,11 @@ form {background: $cyan; padding: $row-top 0 $row-bottom;
     input[type="text"],
     input[type="email"],
     input[type="password"],
-    textarea {width: 230px; padding: 10px; background: white; border: 0; color: black; height: auto; margin: 0;
-      border-radius: 3px; @include css3pie;
+    textarea, .tagsinput {width: 230px; padding: 10px; background: white; border: 0; color: black; height: auto; margin: 0;
+      border-radius: 3px; @include css3pie; @include inline-block;
     }
-    textarea {height: 150px; min-height: 150px; resize: vertical}
+    textarea {height: 150px; min-height: 150px; resize: vertical; @include textarea-size}
+    input[type="file"] {margin-top: 5px}
   }
   .actions {padding-right: 40px;
     input {@include button; float: right }
@@ -226,25 +227,35 @@ form {background: $cyan; padding: $row-top 0 $row-bottom;
         background: rgba(255,255,255,0.5)}
         &:hover {z-index: 20}
         &:hover h3 {visibility: visible; opacity: 1; filter: alpha(opacity=100); top: 0}
-        &:hover img {width: 340px; max-width: 340px; height: auto; left: -20px; top: -20px; @include transition1; border-color: $gray}
-        img { @include border; position: absolute; top: 0; left: 0; @include size(300px, 250px); max-width: 300px}
+        &:hover img {width: 340px; max-width: 340px; height: auto; left: -20px; top: -20px; border-color: $gray}
+        img { @include border; position: absolute; top: 0; left: 0; @include size(300px, 250px); max-width: 300px; @include transition1}
       }
     }
   }
+  .administrate.iterate {margin-top: 270px}
 }
 
 // servicios
 #servicios {
-  .servicio-descripcion {
-    display: table-row;
-    p {display: table-cell; vertical-align: middle; height: 236px}
+  .servicios-item {padding-bottom: $row-bottom; width: 100%; float: left; clear: left;
+    .servicios-fields {display: table;
+      .servicios-fields-inner {display: table-row;
+        p {display: table-cell; vertical-align: middle; width: 100%}
+        .servicio-descripcion {
+          display: table-row;
+        }
+      }
+    }
   } 
+  &.new, &.edit {
+    .tagsinput {@include textarea-size; height: 200px !important }
+  }
 }
 .servicios-list {
   h3 {@include text-heavy; padding-bottom: $sub-title-bottom}
-  img {@include border; @include image-left }
+  img {@include border; @include image-left; vertical-align: top }
   ul {float: left; clear: left; width: 100%;
-    li {@include button; float: left; clear: left; margin-top: $sub-title-bottom}
+    li {@include button; float: left; clear: left; margin-top: $sub-title-bottom; padding-left: 15px; padding-right: 15px}
   }
 }
 

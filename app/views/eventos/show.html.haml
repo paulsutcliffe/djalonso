@@ -1,12 +1,24 @@
-%p#notice= notice
+.container
+  %h2.page-title= page_title! @evento.titulo
 
-%p
-  %b Titulo:
-  = @evento.titulo
-%p
-  %b Fecha:
-  = @evento.fecha
+  //- if current_admin 
+  .administrate.create
+    = link_to 'Editar Evento', edit_evento_path(@evento), class: 'btn btn-primary'
 
-= link_to 'Edit', edit_evento_path(@evento)
-\|
-= link_to 'Back', eventos_path
+  .content
+    %ul.content-inner
+      - @fotos.each do |foto|
+        %li
+          = image_tag foto.imagen_url(:eventos_index).to_s
+
+          - if current_admin
+            .administrate.iterate
+              = link_to 'Edit', edit_evento_foto_path(@evento, foto), :class => 'btn btn-success'
+              = link_to 'delete', evento_foto_path(@evento, foto), :method => :delete, :class => 'btn btn-warning', :confirm => 'Are you sure?'
+
+
+
+     
+             
+
+ 

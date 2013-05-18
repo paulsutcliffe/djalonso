@@ -1,4 +1,4 @@
-= form_for @evento do |f|
+= nested_form_for @evento do |f|
   - if @evento.errors.any?
     #error_explanation
       %h2= "#{pluralize(@evento.errors.count, "error")} prohibited this evento from being saved:"
@@ -12,5 +12,13 @@
   .field
     = f.label :fecha
     = f.date_select :fecha
+
+  %hr
+  .field
+    = f.fields_for :fotos do |foto_form|
+      = foto_form.file_field :imagen
+      = foto_form.link_to_remove "Eliminar esta foto", :class => 'button'
+    = f.link_to_add "Agregar foto", :fotos, :class => 'button'
+
   .actions
     = f.submit 'Save'

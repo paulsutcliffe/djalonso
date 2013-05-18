@@ -1,21 +1,18 @@
-%h1 Listing eventos
+= render 'scripts/megafolio'
 
-%table
-  %tr
-    %th Titulo
-    %th Fecha
-    %th
-    %th
-    %th
+.container
+  %h2.page-title= page_title! 'Matrimonios y Eventos'
 
-  - @eventos.each do |evento|
-    %tr
-      %td= evento.titulo
-      %td= evento.fecha
-      %td= link_to 'Show', evento
-      %td= link_to 'Edit', edit_evento_path(evento)
-      %td= link_to 'Destroy', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  - if current_admin 
+    .administrate.create
+      = link_to 'Crear Evento', new_evento_path, class: 'btn btn-primary'
 
-%br
+  .content
+    %ul.content-inner
+      - @eventos.each do |evento|
+        = evento.titulo
+        = evento.fecha
+        = link_to 'Show', evento
+        = link_to 'Edit', edit_evento_path(evento)
+        = link_to 'Destroy', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Evento', new_evento_path

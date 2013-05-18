@@ -1,5 +1,5 @@
 class Foto < ActiveRecord::Base
-  # attr_accessible :title, :body
+   attr_accessible :imagen
 
   belongs_to :albumes
   belongs_to :eventos

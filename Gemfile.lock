@@ -111,6 +111,7 @@ GEM
       subexec (~> 0.2.1)
     multi_json (1.7.3)
     mysql2 (0.3.11)
+    nested_form (0.3.2)
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -190,7 +191,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)
-    uglifier (2.1.0)
+    uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     unicorn (4.6.2)
@@ -226,6 +227,7 @@ DEPENDENCIES
   launchy (~> 2.2.0)
   mini_magick
   mysql2
+  nested_form
   page_title_helper
   rails (= 3.2.13)
   rmagick

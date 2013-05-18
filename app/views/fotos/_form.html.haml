@@ -1,4 +1,7 @@
-= form_for @foto do |f|
+//= form_for @foto, html: {multipart: true} do |f|
+
+-#
+  = form_for [@album,@foto], html: {multipart: true} do |f|
   - if @foto.errors.any?
     #error_explanation
       %h2= "#{pluralize(@foto.errors.count, "error")} prohibited this foto from being saved:"
@@ -6,5 +9,13 @@
         - @foto.errors.full_messages.each do |msg|
           %li= msg
 
+
+  .field
+    = f.label 'Imagen'
+    = f.file_field :imagen
   .actions
     = f.submit 'Save'
+
+= f.label :imagen
+= f.file_field :imagen
+= link_to_remove_fields "remove", f

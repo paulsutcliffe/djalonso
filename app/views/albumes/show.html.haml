@@ -1,9 +1,24 @@
-%p#notice= notice
+.container
+  %h2.page-title= page_title! @album.nombre
 
-%p
-  %b Nombre:
-  = @album.nombre
+  - if current_admin 
+    .administrate.create
+      = link_to 'Crear Álbum', new_album_foto_path(@album), class: 'btn btn-primary'
 
-= link_to 'Edit', edit_album_path(@album)
-\|
-= link_to 'Back', albumes_path
+  .content
+    %ul.content-inner
+      - @fotos.each do |foto|
+        %li
+          = image_tag foto.imagen_url(:albumes_index).to_s
+
+          - if current_admin
+            .administrate.iterate
+              = link_to 'Edit', edit_album_foto_path(@album, foto), :class => 'btn btn-success'
+              = link_to 'delete', album_foto_path(@album, foto), :method => :delete, :class => 'btn btn-warning', :confirm => 'Are you sure?'
+
+
+
+     
+             
+
+ 

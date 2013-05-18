@@ -3,7 +3,7 @@ Djalonso::Application.routes.draw do
   resources :testimonios
 
 
-  resources :fotos
+  
 
 
   get "djalonso/index"
@@ -14,10 +14,14 @@ Djalonso::Application.routes.draw do
   resources :musicas
 
 
-  resources :eventos
+  resources :eventos do
+    resources :fotos
+  end
 
 
-  resources :albumes
+  resources :albumes do
+    resources :fotos
+  end
 
 
   resources :servicios

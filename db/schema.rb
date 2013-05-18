@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130515065044) do
     t.string   "telefono"
     t.string   "email"
     t.text     "mensaje"
+    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20130515065044) do
   create_table "eventos", :force => true do |t|
     t.string   "titulo"
     t.date     "fecha"
+    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -80,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20130515065044) do
     t.string   "nombre"
     t.text     "descripcion"
     t.text     "equipos"
+    t.string   "slug"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "fotografia"
@@ -88,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20130515065044) do
   create_table "testimonios", :force => true do |t|
     t.text     "contenido"
     t.string   "nombre"
+    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

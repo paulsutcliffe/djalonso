@@ -8,20 +8,23 @@
   .content
     %ul.content-inner.servicios-list
       - @servicios.each do |servicio|
-        %li
+        %li.servicios-item
           %h3
             = servicio.nombre
-          = image_tag servicio.fotografia_url.to_s
-          .servicio-descripcion
-            %p 
-              = servicio.descripcion
+          .servicios-fields
+            .servicios-fields-inner
+              - if servicio.fotografia
+                = image_tag servicio.fotografia_url(:preview).to_s
+              
+              %p 
+                = servicio.descripcion
           %ul.equipos
             <li>
             =  raw(servicio.equipos)
             </li>
           - if current_admin
             .administrate.iterate
-              = link_to 'Edit', edit_servicio_path(servicio), :class => 'button button-edit'
+              = link_to 'Edit', edit_servicio_path(servicio), :class => 'button button-update'
               = link_to 'delete', servicio, :method => :delete, :class => 'button button-delete', :confirm => 'Are you sure?'
         
 

@@ -50,6 +50,7 @@ gem "capistrano"
 # gem 'debugger'
 
 gem "auto_html"
+gem "nested_form"
 gem "rvm-capistrano"
 gem "haml"
 gem "haml-rails"

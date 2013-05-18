@@ -2,6 +2,10 @@
   -moz-transition: 0.3s ease-out all; -webkit-transition: 0.3s ease-out all; -o-transition: 0.3s ease-out all; transition: 0.3s ease-out all
 }
 
+@mixin textarea-size {
+width: 400px !important; height: 200px 
+}
+
 @mixin border {
   border: 8px solid $cyan;
 }
