@@ -1,7 +1,12 @@
 @mixin transition1 {
   -moz-transition: 0.3s ease-out all; -webkit-transition: 0.3s ease-out all; -o-transition: 0.3s ease-out all; transition: 0.3s ease-out all
 }
+@mixin list-heading {
+  h3 {position: absolute; top: -80px; left: 0; padding: 10px; visibility: hidden; 
+        opacity: 0; filter: alpha(opacity=0); z-index: 20; @include transition1;
+        background: rgba(255,255,255,0.5)}
 
+}
 @mixin textarea-size {
 width: 400px !important; height: 200px 
 }

@@ -3,6 +3,10 @@
 
 - content_for :javascript do
   = javascript_include_tag 'megafolio/js/jquery.themepunch.plugins.min.js', 'megafolio/js/jquery.themepunch.megafoliopro.js'   
+  :javascript
+    jQuery(document).ready(function() {
+        var api=jQuery('.megafolio-container').megafoliopro();
+    });
   
 
 
