@@ -4,7 +4,7 @@ body {background: $bg-gray; font-family: $font-open-sans; color: $dark; line-hei
 h1, h2, h3, h4, h5, h6, p, span, li, dd, a, input {color: $dark; margin: 0; 
 line-height: 100%; font-weight: 300; font-family: $font-open-sans}
 h2.page-title, h2.title {background: $cyan; color: white; @include inline-block; text-transform: uppercase; 
-padding: 10px; border-bottom: $title-bottom solid white }
+padding: 10px; border-bottom: $title-bottom solid white; line-height: 115% }
 ul, ol, dl, p {margin: 0} li {list-style: none}
 p {line-height: 145%; font-size: 15px; text-align: justify; padding-bottom: 20px}
 figure {margin: 0}
@@ -196,7 +196,7 @@ form {background: $cyan; padding: $row-top 0 $row-bottom;
     input[type="file"] {margin-top: 5px}
   }
   .actions {padding-right: 40px;
-    input {@include button; float: right }
+    input {@include submit; float: right }
   }
 }
 
@@ -282,8 +282,9 @@ form {background: $cyan; padding: $row-top 0 $row-bottom;
     @extend .btn-warning;
   }
   &.button-back {
-    @extend .btn;
-    @extend .btn-info;
+  //  @extend .btn;
+  // @extend .btn-info;
+  @include button; 
   }
   &.button-show {
     @extend .btn;
@@ -291,6 +292,8 @@ form {background: $cyan; padding: $row-top 0 $row-bottom;
   }
 
 }
+
+.content-header {padding-bottom: $row-bottom/2}
 
 // devise
 body[id^="devise"] br {display: none}
@@ -302,3 +305,28 @@ body[id^="devise"] br {display: none}
    box-sizing: border-box;
    -webkit-box-sizing: border-box;
 }
+
+
+body .mega-white .mega-title {color: white; background: $gray; position: absolute; top: -80px; left: 10px; padding: 10px;
+font-weight: 300; max-width: 80%}
+body .mega-white .mega-title h3 a {color: white; line-height: 115%}
+body .mega-entry .mega-entry-innerwrap {border-color: $cyan}
+body .mega-portrait .mega-portrait-bottom {top: 0; bottom: auto}
+body .mega-covercaption {height: 100%; background: transparent}
+body .mega-date {background: $gray; color: white; position: absolute; top: auto; bottom: -80px; left: 10px; 
+@include inline-block; padding: 10px}
+body .mega-white .mega-date {color: white; font-size: 18px; text-align: center; line-height: 100%}
+body .mega-white .mega-date .date-day {font-size: 36px; line-height: 100%}
+
+body .mega-entry .mega-title,
+body .mega-entry .mega-date {opacity: 0; filter: alpha(opacity=0); visibility: hidden;
+@include transition1;}
+
+body .mega-entry:hover .mega-title,
+body .mega-entry:hover .mega-date {opacity: 1; filter: alpha(opacity=100); visibility: visible}
+
+body .mega-entry:hover .mega-title {top: 10px}
+body .mega-entry:hover .mega-date {bottom: 10px;}
+body .mega-entry:hover .mega-entry-innerwrap {border-color: $gray}
+
+.mega-entry .fake-click {display: block; @include size(100%, 100%)}

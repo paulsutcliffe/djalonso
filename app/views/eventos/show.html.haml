@@ -1,7 +1,10 @@
 = render 'scripts/megafolio'
+= render 'scripts/fancybox'
 
 .container
-  %h2.page-title= page_title! @evento.titulo
+  %header.content-header
+    %h2.page-title= page_title! @evento.titulo
+    = link_to 'Volver', eventos_path, class: 'button button-back'
 
   - if current_admin 
     .administrate.create
@@ -11,6 +14,7 @@
     .content-inner.megafolio-container
       - @fotos.each_with_index do |foto, index|
         .div{:class => 'mega-entry cat-all cat-one', :id => 'mega-entry-' + index.to_s, :"data-src" => foto.imagen_url(:eventos_index).to_s, :"data-width" => '504', :"data-height" => '400'}
+          = link_to '', foto.imagen_url(:lightbox).to_s, class: 'fancybox fake-click', rel: 'group'
 
 
 

@@ -10,12 +10,13 @@
     = f.label :nombre
     = f.text_field :nombre
 
-  %hr
   .field
     = f.fields_for :fotos do |foto_form|
+      %hr
+      = foto_form.label :imagen, 'Agregar Imágenes'
       = foto_form.file_field :imagen
-      = foto_form.link_to_remove "Eliminar esta foto", :class => 'button'
-    = f.link_to_add "Agregar foto", :fotos, :class => 'button'
+      = foto_form.link_to_remove "Eliminar esta foto", :class => 'button button-delete'
+    = f.link_to_add "Agregar foto", :fotos, :class => 'button button-create'
 
   .actions
     = f.submit 'Save'

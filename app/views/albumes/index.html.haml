@@ -12,12 +12,12 @@
           %h3
             = album.nombre
           - unless album.fotos.empty?
-            = link_to image_tag(album.fotos.first.imagen_url(:thumb).to_s), album
+            = link_to image_tag(album.fotos.first.imagen_url(:albumes_index).to_s), album
 
-          //- if current_admin
-          .administrate.iterate
-            = link_to 'Edit', edit_album_path(album), :class => 'btn btn-success'
-            = link_to 'delete', album, :method => :delete, :class => 'btn btn-warning', :confirm => 'Are you sure?'
+          - if current_admin
+            .administrate.iterate
+              = link_to 'Edit', edit_album_path(album), :class => 'btn btn-success'
+              = link_to 'delete', album, :method => :delete, :class => 'btn btn-warning', :confirm => 'Are you sure?'
 
       
 

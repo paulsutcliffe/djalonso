@@ -8,23 +8,28 @@
       = link_to 'Crear Evento', new_evento_path, class: 'btn btn-primary'
 
   .content
-    .content-inner.megafolio-container.gallery-list
-      - @eventos.each_with_index do |evento, index|
-        %h3
-          = evento.titulo
-        - unless evento.fotos.empty?
-          .div{:class => 'mega-entry cat-all cat-one', :id => 'mega-entry-' + index.to_s, :"data-src" => evento.fotos.first.imagen_url(:eventos_index).to_s, :"data-width" => '504', :"data-height" => '400'}
-            .div{:class => 'mega-covercaption mega-square-top mega-landscape-right mega-portrait-bottom mega-white'}
-              .mega-title
-                = evento.titulo
-              .mega-date
- 
-        
-        - if current_admin 
-          = evento.fecha
-          = link_to 'Show', evento
-          = link_to 'Edit', edit_evento_path(evento)
-          = link_to 'Destroy', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .content-inner
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non tellus enim. 
+        Nulla tempus congue dui, eleifend tincidunt enim commodo sed. 
+      .megafolio-container
+
+        - @eventos.each_with_index do |evento, index|
+          - unless evento.fotos.empty?
+            .div{:class => 'mega-entry cat-all cat-one', :id => 'mega-entry-' + index.to_s, :"data-src" => evento.fotos.first.imagen_url(:eventos_index).to_s, :"data-width" => '504', :"data-height" => '400'}
+              .div{:class => 'mega-covercaption mega-square-top mega-landscape-right mega-portrait-bottom mega-white'}
+                .mega-title
+                  %h3
+                    = link_to evento.titulo, evento
+                .mega-date
+                  .date-day
+                    = l evento.fecha, :format => :day_numeric
+                  = l evento.fecha, :format => :month
+
+          
+          - if current_admin 
+            = link_to 'Edit', edit_evento_path(evento), class: 'button button-info'
+            = link_to 'Destroy', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button button-delete'
 
 
      
