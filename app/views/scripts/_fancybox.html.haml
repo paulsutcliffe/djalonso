@@ -3,5 +3,9 @@
 
 - content_for :javascript do
   = javascript_include_tag 'megafolio/fancybox/jquery.fancybox.pack.js?v=2.1.3'
-
+  :javascript
+    $(document).ready(function() {
+      // THE FANCYBOX PLUGIN INITALISATION
+      jQuery(".fancybox").fancybox();
+    });
  

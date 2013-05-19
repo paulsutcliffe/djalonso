@@ -293,7 +293,10 @@ form {background: $cyan; padding: $row-top 0 $row-bottom;
 
 }
 
-.content-header {padding-bottom: $row-bottom/2}
+.content-header {padding-bottom: $row-bottom/2; float: left; clear: left; width: 100%;
+  h2.page-title, .button-back {float: left; clear: left}
+
+}
 
 // devise
 body[id^="devise"] br {display: none}
