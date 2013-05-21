@@ -222,7 +222,7 @@ form {background: $cyan; padding: $row-top 0 $row-bottom;
 }
 
 // álbumes
-#albumes {
+#albumes--- {
   .content {
     ul {width: 105%;
       li {float: left; margin: 0 30px 30px 0; position: relative; @include size(300px, 250px); z-index: 10;

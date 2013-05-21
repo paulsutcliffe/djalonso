@@ -1,21 +1,31 @@
+= render 'scripts/megafolio'
+= render 'scripts/fancybox'
+
 .container
-  %h2.page-title= page_title! @album.nombre
+  %header.content-header
+    %h2.page-title= page_title! @album.nombre
+    = link_to 'Volver', eventos_path, class: 'button button-back'
+
 
   - if current_admin 
     .administrate.create
       = link_to 'Crear Álbum', new_album_foto_path(@album), class: 'btn btn-primary'
 
   .content
-    %ul.content-inner
-      - @fotos.each do |foto|
-        %li
-          = image_tag foto.imagen_url(:albumes_index).to_s
+    .content-inner
+      .megafolio-container
+        - @fotos.each_with_index do |foto, index|
+          .div{:class => 'mega-entry cat-all cat-one', :id => 'mega-entry-' + index.to_s, :"data-src" => foto.imagen_url(:eventos_index).to_s, :"data-width" => '504', :"data-height" => '400'}
+            = link_to '', foto.imagen_url(:lightbox).to_s, class: 'fancybox fake-click', rel: 'group'
 
-          - if current_admin
-            .administrate.iterate
-              = link_to 'Edit', edit_album_foto_path(@album, foto), :class => 'btn btn-success'
-              = link_to 'delete', album_foto_path(@album, foto), :method => :delete, :class => 'btn btn-warning', :confirm => 'Are you sure?'
 
+      %noscript
+        :css
+          .megafolio-container {display: none}
+        %ul.no-js-gallery.lightbox
+          - @fotos.each_with_index do |foto, index|
+            %li
+              = link_to image_tag(foto.imagen_url(:lightbox).to_s), ''
 
 
      
