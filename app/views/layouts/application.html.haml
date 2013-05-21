@@ -52,6 +52,13 @@
       = render 'layouts/menu'    
     %section#content{:role => 'main'}
       = render 'layouts/notices'
+      %noscript
+        .container
+          .alert.alert-error
+            = link_to '*', '#', :"data-dismiss" => 'alert', :class => 'close'
+            %strong
+              Atención,
+            éste sitio funciona mejor con javascript activado             
       = yield
     %footer
       .container

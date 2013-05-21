@@ -1,3 +1,5 @@
+= render 'scripts/megafolio'
+
 .container
   %h2.page-title= page_title! 'Galería'
 
@@ -6,18 +8,17 @@
       = link_to 'Crear Álbum', new_album_path, class: 'btn btn-primary'
 
   .content
-    %ul.content-inner
-      - @albumes.each do |album|
-        %li
-          %h3
-            = album.nombre
+    .content-inner
+      .megafolio-container
+
+        - @albumes.each_with_index do |album, index|
           - unless album.fotos.empty?
-            = link_to image_tag(album.fotos.first.imagen_url(:albumes_index).to_s), album
+            .div{:class => 'mega-entry cat-all cat-one', :id => 'mega-entry-' + index.to_s, :"data-src" => album.fotos.first.imagen_url(:albumes_index).to_s, :"data-width" => '504', :"data-height" => '400'}
+              .div{:class => 'mega-covercaption mega-square-top mega-landscape-right mega-portrait-bottom mega-white'}
+                .mega-title
+                  %h3
+                    = link_to album.nombre, album
+               
 
-          - if current_admin
-            .administrate.iterate
-              = link_to 'Edit', edit_album_path(album), :class => 'btn btn-success'
-              = link_to 'delete', album, :method => :delete, :class => 'btn btn-warning', :confirm => 'Are you sure?'
-
-      
+            
 

@@ -16,4 +16,5 @@
 //= require jquery_nested_form
 //
 // Loads all Bootstrap javascripts
-//= require bootstrap
+//= require bootstrap-transition
+//= require bootstrap-carousel

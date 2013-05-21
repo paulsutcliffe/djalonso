@@ -29,12 +29,25 @@ class ImagenUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+
+  version :thumbnails do
+    process :from_orientation => [[200, 100], [100,200]]
+  end
+
   version :albumes_index do
-    process :resize_to_limit => [340, 285]
+    process :from_orientation => [[800, 600], [600,800]]
+  end
+
+  version :albumes_index_no_js do
+    process :from_orientation => [[400, 200], [200,400]]
   end
 
   version :eventos_index do
     process :from_orientation => [[800, 600], [600,800]]
+  end
+
+  version :eventos_index_no_js do
+    process :from_orientation => [[400, 200], [200,400]]
   end
 
   version :lightbox do

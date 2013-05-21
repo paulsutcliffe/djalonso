@@ -27,9 +27,20 @@
                   = l evento.fecha, :format => :month
 
           
-          - if current_admin 
-            = link_to 'Edit', edit_evento_path(evento), class: 'button button-info'
-            = link_to 'Destroy', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button button-delete'
+              - if current_admin 
+                .administrate.iterate
+                  = link_to 'Edit', edit_evento_path(evento), class: 'button button-update'
+                  = link_to 'Destroy', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button button-delete'
+
+      %noscript
+        :css
+          .megafolio-container {display: none}
+        %ul.no-js-gallery
+          - @eventos.each_with_index do |evento, index|
+            %li
+              %h3
+                = link_to evento.titulo, evento
+              = image_tag evento.fotos.first.imagen_url(:eventos_index_no_js).to_s
 
 
      

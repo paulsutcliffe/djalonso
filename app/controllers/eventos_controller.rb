@@ -2,7 +2,7 @@ class EventosController < InheritedResources::Base
 
   def index
     @eventos = Evento.all
-    @megafolio_layout = 3;
+    @megafolio_layout = 3
   end
 
 
@@ -10,6 +10,6 @@ class EventosController < InheritedResources::Base
     @evento = Evento.find(params[:id])
     @fotos = @evento.fotos.all
 
-    @megafolio_layout = 1;
+    @megafolio_layout = 1
   end
 end

@@ -144,7 +144,7 @@ footer {
 .administrate {
   padding-bottom: $row-bottom; 
   &.create {}
-  &.iterate {padding: 5px 0; text-align: right}
+  &.iterate {padding: 5px 0; text-align: right; z-index: 100; position: relative}
 }
 
 // Inicio
@@ -333,3 +333,21 @@ body .mega-entry:hover .mega-date {bottom: 10px;}
 body .mega-entry:hover .mega-entry-innerwrap {border-color: $gray}
 
 .mega-entry .fake-click {display: block; @include size(100%, 100%)}
+
+.no-js-gallery {
+  li { float: left; margin: 0 10px 10px 0; position: relative; overflow: hidden;
+    h3 {position: absolute; top: -100%; left: 0; background: $gray; z-index: 50; width: 100%; height: 100%; @include transition1;
+      a {color: white; padding: 10px; display: block}
+    }
+    img {position: relative; z-index: 10}
+
+    &:hover {
+      h3 {
+        top: 0
+      }
+    }
+  }
+  &.lightbox {
+    li {float: left; clear: left}
+  }
+}
