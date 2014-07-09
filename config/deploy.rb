@@ -22,6 +22,17 @@ ssh_options[:forward_agent] = true
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
+
+  task :create_database do
+    set :root_password, Capistrano::CLI.password_prompt("MySQL root password: ")
+    set :db_user, Capistrano::CLI.ui.ask("Application database user: ")
+    set :db_pass, Capistrano::CLI.password_prompt("Password: ")
+    set :db_name, Capistrano::CLI.ui.ask("Database name: ")
+
+    run "mysql --user=root --password=#{root_password} -e \"CREATE DATABASE IF NOT EXISTS #{db_name}\""
+    run "mysql --user=root --password=#{root_password} -e \"GRANT ALL PRIVILEGES ON #{db_name}.* TO '#{db_user}'@'localhost' IDENTIFIED BY '#{db_pass}' WITH GRANT OPTION\""
+  end
+
   %w[start stop restart].each do |command|
     desc "#{command} unicorn server"
     task command, roles: :app, except: {no_release: true} do
@@ -37,6 +48,7 @@ namespace :deploy do
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
   end
   before "deploy:cold", "deploy:setup_config"
+  before "deploy:cold", "deploy:create_database"
 
   task :symlink_config, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
