@@ -62,4 +62,3 @@ gem "devise"
 gem "rmagick"
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'will_paginate'
