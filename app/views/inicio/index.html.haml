@@ -10,11 +10,11 @@
       <!-- Carousel items -->
       .carousel-inner
         .item.active
-          = image_tag 'img-slide.jpg'
+          = image_tag asset_path('img-slide.jpg')
         .item
-          = image_tag 'img-slide.jpg'
+          = image_tag asset_path('img-slide.jpg')
         .item
-          = image_tag 'img-slide.jpg'
+          = image_tag asset_path('img-slide.jpg')
 
       <!-- Carousel nav -->
       = link_to raw('&lsaquo;'), '#myCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
@@ -26,7 +26,7 @@
   .dj-presentation
     .content
       .dj-presentation-foto
-        = image_tag 'img-alonso.jpg'
+        = image_tag asset_path('img-alonso.jpg')
         %p
           Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
       .dj-presentation-likebox
@@ -52,33 +52,33 @@
         .item.active
           %ul.thumbnails
             %li.span3
-              = image_tag 'img-alquiler-carousel-1.jpg'
+              = image_tag asset_path('img-alquiler-carousel-1.jpg')
               %h3
                 Eventos corporativos
             %li.span3.activado
-              = image_tag 'img-alquiler-carousel-1.jpg'
+              = image_tag asset_path('img-alquiler-carousel-1.jpg')
               %h3
                 Staff de Dj's para tus eventos
             %li.span3
-              = image_tag 'img-alquiler-carousel-1.jpg'
+              = image_tag asset_path('img-alquiler-carousel-1.jpg')
               %h3
                 Sonido y luces para matrimonios
         .item
           %ul.thumbnails
             %li.span3
-              = image_tag 'img-alquiler-carousel-1.jpg'
+              = image_tag asset_path('img-alquiler-carousel-1.jpg')
             %li.span3.activado
-              = image_tag 'img-alquiler-carousel-1.jpg'
+              = image_tag asset_path('img-alquiler-carousel-1.jpg')
             %li.span3
-              = image_tag 'img-alquiler-carousel-1.jpg'
+              = image_tag asset_path('img-alquiler-carousel-1.jpg')
         .item
           %ul.thumbnails
             %li.span3
-              = image_tag 'img-alquiler-carousel-1.jpg'
+              = image_tag asset_path('img-alquiler-carousel-1.jpg')
             %li.span3.activado
-              = image_tag 'img-alquiler-carousel-1.jpg'
+              = image_tag asset_path('img-alquiler-carousel-1.jpg')
             %li.span3
-              = image_tag 'img-alquiler-carousel-1.jpg'
+              = image_tag asset_path('img-alquiler-carousel-1.jpg')
 
       <!-- Carousel nav -->
       = link_to '<', '#alquilerCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
