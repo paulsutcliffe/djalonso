@@ -47,9 +47,9 @@
         .header-inner
           %h1
             = link_to image_tag('logo.png', alt: 'Dj Alonso'), root_path, id: 'logo'
-          = link_to image_tag('logo-dragon.png'), '/', id: 'logo-dragon'
+          = link_to image_tag('logo-dragon.png'), 'http://www.eldragon.com.pe', id: 'logo-dragon'
     %nav.container.main-menu
-      = render 'layouts/menu'    
+      = render 'layouts/menu'
     %section#content{:role => 'main'}
       = render 'layouts/notices'
       %noscript
@@ -58,7 +58,7 @@
             = link_to '*', '#', :"data-dismiss" => 'alert', :class => 'close'
             %strong
               Atención,
-            éste sitio funciona mejor con javascript activado             
+            éste sitio funciona mejor con javascript activado
       = yield
     %footer
       .container
@@ -69,7 +69,7 @@
         .row.footer-credits
           .span6#copyright
             %p
-              © 
+              ©
               = current_year + ' Todos los derechos reservados, Alonso Valencia.'
           .span6#autor
             = link_to 'DISEÑO Y DESARROLLO WEB POR KOSMYKA', 'http://www.kosmyka.com', target: '_blank'

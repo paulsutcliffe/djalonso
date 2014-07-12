@@ -11,7 +11,7 @@
       //alerta.setAttribute('className', 'alert alert-error');
 
       alerta.className += ' alert-error';
-      alerta.className = alerta.className.replace(/\balert-success\b/, '');  
+      alerta.className = alerta.className.replace(/\balert-success\b/, '');
   .fields.datos
     .field
       = f.label :nombre
@@ -27,6 +27,4 @@
       = f.label :mensaje
       = f.text_area :mensaje
     .actions
-      = f.submit 'Save'
-
-  
+      = f.submit 'Enviar'
