@@ -3,15 +3,12 @@
 .container
   %h2.page-title= page_title! 'Matrimonios y Eventos'
 
-  - if current_admin 
+  - if current_admin
     .administrate.create
       = link_to 'Crear Evento', new_evento_path, class: 'btn btn-primary'
 
   .content
     .content-inner
-      %p
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non tellus enim. 
-        Nulla tempus congue dui, eleifend tincidunt enim commodo sed. 
       .megafolio-container
 
         - @eventos.each_with_index do |evento, index|
@@ -26,8 +23,7 @@
                     = l evento.fecha, :format => :day_numeric
                   = l evento.fecha, :format => :month
 
-          
-              - if current_admin 
+              - if current_admin
                 .administrate.iterate
                   = link_to 'Edit', edit_evento_path(evento), class: 'button button-update'
                   = link_to 'Destroy', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button button-delete'
@@ -41,11 +37,3 @@
               %h3
                 = link_to evento.titulo, evento
               = image_tag evento.fotos.first.imagen_url(:eventos_index_no_js).to_s
-
-
-     
-
- 
-
- 
-
