@@ -5,6 +5,11 @@
       %ol.carousel-indicators
         %li{:"data-target" => "#myCarousel", :"data-slide-to" => "0", :class => "active"}
         %li{:"data-target" => "#myCarousel", :"data-slide-to" => "1"}
+        %li{:"data-target" => "#myCarousel", :"data-slide-to" => "2"}
+        %li{:"data-target" => "#myCarousel", :"data-slide-to" => "3"}
+        %li{:"data-target" => "#myCarousel", :"data-slide-to" => "4"}
+        %li{:"data-target" => "#myCarousel", :"data-slide-to" => "5"}
+        %li{:"data-target" => "#myCarousel", :"data-slide-to" => "6"}
 
       <!-- Carousel items -->
       .carousel-inner
@@ -12,6 +17,16 @@
           = image_tag asset_path('img-slide-1.jpg')
         .item
           = image_tag asset_path('img-slide-2.jpg')
+        .item
+          = image_tag asset_path('img-slide-3.jpg')
+        .item
+          = image_tag asset_path('img-slide-4.jpg')
+        .item
+          = image_tag asset_path('img-slide-5.jpg')
+        .item
+          = image_tag asset_path('img-slide-6.jpg')
+        .item
+          = image_tag asset_path('img-slide-7.jpg')
 
       <!-- Carousel nav -->
       = link_to raw('&lsaquo;'), '#myCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
@@ -29,38 +44,6 @@
       .dj-presentation-likebox
         == <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fdjjalonsovalencia&amp;width=490&amp;height=558&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=true&amp;show_border=false&amp;appId=487746734678044" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:490px; height:558px;" allowTransparency="true"></iframe>
 
-  %section.alquiler-equipos
-    %h2.title
-      Alquiler de equipos
-    .content
-      .alquiler-equipos-detalle
-        %p
-          Lo último en tecnología para matrimonios, fiestas y eventos privados o corporativos. Equipos modernos, luces, video, grupos electrogenos y un selecto staff de Dj's, Vj's, etc.
-    .row
-    #alquilerCarousel.carousel.slide
-      %ol.carousel-indicators
-        %li{:"data-target" => "#alquilerCarousel", :"data-slide-to" => "0", :class => "active"}
-
-      <!-- Carousel items -->
-      .carousel-inner
-        .item.active
-          %ul.thumbnails
-            %li.span3
-              = image_tag asset_path('img-servicios-carousel-1.jpg')
-              %h3
-                Eventos corporativos
-            %li.span3.activado
-              = image_tag asset_path('img-servicios-carousel-2.jpg')
-              %h3
-                Staff de Dj's para tus eventos
-            %li.span3
-              = image_tag asset_path('img-servicios-carousel-3.jpg')
-              %h3
-                Sonido y luces para matrimonios
-
-      <!-- Carousel nav -->
-      = link_to '<', '#alquilerCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
-      = link_to '>', '#alquilerCarousel', :"data-slide" => 'next', :class => 'carousel-control right'
 
 
   -# %section.testimonios

@@ -1,11 +1,68 @@
 .container
   %h2.page-title= page_title! 'ALQUILER DE EQUIPOS'
 
-  - if current_admin 
+  -# if current_admin
     .administrate.create
       = link_to 'Agregar Servicio', new_servicio_path, class: 'button button-create'
 
-  .content
+  %section.alquiler-equipos
+    .content
+      .alquiler-equipos-detalle
+        %p
+          Lo último en tecnología para matrimonios, fiestas y eventos privados o corporativos. Equipos modernos, luces, video, grupos electrogenos y un selecto staff de Dj's, Vj's, etc.
+    .row
+    #alquilerCarousel.carousel.slide
+      %ol.carousel-indicators
+        %li{:"data-target" => "#alquilerCarousel", :"data-slide-to" => "0", :class => "active"}
+        %li{:"data-target" => "#alquilerCarousel", :"data-slide-to" => "1"}
+        %li{:"data-target" => "#alquilerCarousel", :"data-slide-to" => "2"}
+        %li{:"data-target" => "#alquilerCarousel", :"data-slide-to" => "3"}
+
+      <!-- Carousel items -->
+      .carousel-inner
+        .item.active
+          %ul.thumbnails
+            %li.span3
+              = image_tag asset_path('img-servicios-carousel-1.jpg')
+            %li.span3.activado
+              = image_tag asset_path('img-servicios-carousel-2.jpg')
+            %li.span3
+              = image_tag asset_path('img-servicios-carousel-3.jpg')
+        .item
+          %ul.thumbnails
+            %li.span3
+              = image_tag asset_path('img-servicios-carousel-4.jpg')
+            %li.span3.activado
+              = image_tag asset_path('img-servicios-carousel-5.jpg')
+            %li.span3
+              = image_tag asset_path('img-servicios-carousel-6.jpg')
+        .item
+          %ul.thumbnails
+            %li.span3
+              = image_tag asset_path('img-servicios-carousel-7.jpg')
+            %li.span3.activado
+              = image_tag asset_path('img-servicios-carousel-8.jpg')
+            %li.span3
+              = image_tag asset_path('img-servicios-carousel-9.jpg')
+        .item
+          %ul.thumbnails
+            %li.span3
+              = image_tag asset_path('img-servicios-carousel-10.jpg')
+            %li.span3.activado
+              = image_tag asset_path('img-servicios-carousel-11.jpg')
+            %li.span3
+              = image_tag asset_path('img-servicios-carousel-12.jpg')
+
+      <!-- Carousel nav -->
+      = link_to '<', '#alquilerCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
+      = link_to '>', '#alquilerCarousel', :"data-slide" => 'next', :class => 'carousel-control right'
+
+
+
+
+
+
+  -#
     %ul.content-inner.servicios-list
       - @servicios.each do |servicio|
         %li.servicios-item
@@ -15,8 +72,8 @@
             .servicios-fields-inner
               - if servicio.fotografia
                 = image_tag servicio.fotografia_url(:preview).to_s
-              
-              %p 
+
+              %p
                 = servicio.descripcion
           %ul.equipos
             <li>
@@ -26,6 +83,6 @@
             .administrate.iterate
               = link_to 'Edit', edit_servicio_path(servicio), :class => 'button button-update'
               = link_to 'delete', servicio, :method => :delete, :class => 'button button-delete', :confirm => 'Are you sure?'
-        
+
 
 
